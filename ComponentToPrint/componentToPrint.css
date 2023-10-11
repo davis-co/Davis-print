@@ -1,0 +1,123 @@
+.print-page-container {
+  display: none;
+}
+@media print {
+  .print-page-container {
+    gap: 3rem;
+    justify-content: center;
+    height: 100vh;
+    display: block;
+  }
+  .print-page-header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    top: 2vh;
+    right: 5vw;
+    height: 50px;
+    left: 10vw;
+    padding: 3rem;
+    padding-bottom: 2.5rem;
+    padding-left: 0;
+  }
+
+  .print-page-border {
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(
+      0.25turn,
+      rgba(64, 162, 224, 1) 0%,
+      rgba(64, 162, 224, 1) 35%,
+      #1e81c0 100%
+    );
+    border-image-slice: 1;
+  }
+
+  .print-page-footer {
+    position: fixed;
+    bottom: 0;
+    left: 10vw;
+    right: 5vw;
+    height: 100px;
+  }
+  .print-page-address * {
+    font-size: 0.9rem;
+  }
+  .print-page-davis * {
+    font-size: 0.6rem;
+  }
+  .print-page-bg {
+    position: absolute;
+    z-index: -100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.01;
+    object-fit: fill;
+  }
+  .print-page-layout {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 98%;
+    left: 4vw;
+  }
+  .print-page-line {
+    flex-grow: 1;
+    background: rgb(64, 162, 224);
+    background: linear-gradient(
+      180deg,
+      rgba(64, 162, 224, 1) 0%,
+      rgba(64, 162, 224, 1) 35%,
+      rgb(30, 129, 192) 100%
+    );
+    order: -1;
+    margin-top: -2rem;
+    width: 1.2rem;
+  }
+  .print-page-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 12rem;
+    margin-left: 0.3rem;
+    width: 1.2rem;
+    /* transform-origin: center left; */
+
+    /* padding-bottom: 4rem; */
+  }
+  .print-page-address > h1 {
+    /* height: 100%;
+    width: 100%; */
+    /* flex: 1 1 10rem; */
+    font-size: x-large;
+    font-weight: bold;
+    color: rgba(30, 129, 192);
+    transform: rotate(-90deg);
+    white-space: nowrap;
+  }
+  .print-page-main {
+    /* padding: 120px 4vw 100px 0; */
+    padding-top: 120px;
+    padding-right: 2rem;
+    height: 85%;
+    overflow: hidden;
+    font-size: 0.8rem;
+  }
+  @media (max-width: 600px) {
+    .print-page-footer-address * {
+      font-size: 0.6rem;
+    }
+    .print-page-davis * {
+      font-size: 0.4rem;
+    }
+  }
+
+  .print-page-footer * {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,29 @@
+import { useReactToPrint } from "react-to-print";
+js:
+        const componentRef = useRef(null);
+  	const handlePrint = useReactToPrint({
+  	content: () => componentRef.current
+  	});
+jsx:
+
+	<Button
+	variant="info"
+	onClick={handlePrint}
+	className="mb-4 mr-auto"
+ 	>
+	چاپ
+	</Button>
+                      
+	<div
+	className="m"
+	ref={componentRef}
+	>
+		<ComponentToPrint
+		logo={logo(:string)}
+		reportDate={report date}
+		title="Exmple.com"
+		websiteAddress="example.com"
+		>
+			...children
+		</ComponentToPrint>
+	</div>
